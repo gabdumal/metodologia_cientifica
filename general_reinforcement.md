@@ -4,6 +4,12 @@
 
 ## Porque este artigo foi escolhido? Qual a relação com o seu tema de pesquisa?
 
+- Esse artigo se relaciona diretamente com o tema de pesquisa, que é representar jogos de turnos genéricos em um programa de computador, e permitir fazer testes de jogabilidade sobre eles.
+
+- O artigo apresenta uma técnica evolucionária para desenvolver agentes inteligentes capazes de jogar jogos de tabuleiro a nível profissional, sem conhecimento prévio do jogo e sem otimizações específicas.
+
+- As técnicas de árvores de busca de Monte Carlo (MCTS), e aprendizado por reforço junto a uma rede neural profunda se apresentam como flexíveis o suficiente para serem aplicadas em um programa de propósito geral.
+
 ## Faça um resumo do conteúdo metodológico/tecnológico do Artigo Evolucionário
 
 - O artigo apresenta os jogos Xadrex e Shogi como desafios para a inteligência computacional, similarmente ao jogo de Go.
