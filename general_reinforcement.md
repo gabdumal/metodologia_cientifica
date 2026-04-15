@@ -36,4 +36,16 @@
 
 - O AlphaZero mantém apenas uma rede neural, em vez de duas, como o AlphaGo. Ela tem a maior parte de sua arquitetura compartilhada, mas apresenta uma saída que estima a qualidade de vitória de um estado ("value head"), e outra saída que estima a probabilidade de qualidade de cada movimento tomado ("policy head").
 
+- O treinamento do AlphaZero foi realizada em instâncias separadas para cada jogo. A duração do treinamento foi de 9 horas para o Xadrez, 12 horas para o Shogi, e 13 dias para o Go.
+  - Os autores compararam quanto tempo de treinamento foi necessário para que cada agente superasse os melhores programas de cada jogo.
+  - O AlphaZero superou o Stockfish em Xadrez em 4 horas; superou o Elmo em Shogi em 2 horas; e superou o AlphaGo Lee em Go em 30 horas.
+
+- Os autores ainda demonstraram que o AlphaZero treinado para o Go foi capaz de superar o AlphaGo Zero (com otimizações específicas) em 61% das partidas.
+
+- Para o Xadrez, o AlphaZero venceu o Stockfish em 155 partidas, perdeu em 6, e empatou nas restantes em um conjunto de 1000.
+
+- Para o Shogi, o AlphaZero venceu o Elmo em 98,2% das partidas jogando com peças pretas, e em 91,2% das partidas jogando com peças brancas.
+
+- Os autores concluem que o AlphaZero é um algoritmo de aprendizado por reforço geral, capaz de aprender a jogar diferentes jogos de tabuleiro a partir do conhecimento apenas das regras do jogo, e que supera os melhores programas específicos para cada jogo dada uma quantidade suficiente de tempo de treinamento.
+
 ## Faça um resumo do conteúdo epistemológico do Artigo Revolucionário
