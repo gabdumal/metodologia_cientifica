@@ -43,8 +43,28 @@ Este primeiro se restringiu a
   - O método tradicional de atribuição de valor a um nó é realizar simulações do seu estado até o fim da partida e avaliar seu resultado (se vitória, derrota ou empate)
   - A técnica revolucionária, em vez de simular a partida, solicita a avaliação do estado do nó para a "value network", uma rede neural profunda de classificação de imagens.
     - Ela recebe como entrada o tabuleiro do jogo no estado atual representado no tamanho de 19x19 (para o jogo de Go) e retorna uma estimativa do valor do estado, em relação à probabilidade esperada de vitória (ou derrota) para o jogador atual.
+    - Os autores ainda utilizam alguns passos de simulação (rollout) aleatórios para complementar a avaliação.
   - Além disso, a cada passo de busca, será selecionado um nó para se expandir em uma nova jogada.
     - O método tradicional seleciona a jogada que melhor balanceia a exploração (exploration) da árvore de busca com o aproveitamento (exploitation) dos nós mais promissores, de acordo com a fórmula de Upper Confidence Bounds for Trees (UCT).
     - A técnica revolucionária, em vez disso, fornece o estado do tabuleiro para a "policy network", que retorna uma distribuição de probabilidades sobre os movimentos válidos a partir daquele estado. Então seleciona algum segundo o método da roleta.
+
+- O conteúdo do artigo se debruça principalmente sobre o treinamento das duas redes neurais profundas propostas.
+
+- Num primeiro estágio, os autores utilizam o método de aprendizado supervisionado para treinar uma "policy network" composta de blocos com camadas convolucionais e funções de ativação ReLU. A saída passa for uma função de softmax.
+  - Eles utilizara redes de 13 camadas, treinadas com um banco de dados de 30 milhões de estados de jogos de Go jogados por humanos experts, do KGS Go Server.
+
+- Num segundo estágio, os autores utilizam o método de aprendizado por reforço para melhorar a "policy network".
+  - Eles empenharam o método de "self-play" (auto-jogo), em que um agente joga contra uma cópia de si mesmo (utilizado iterações variadas de treinamento).
+  - Eles determinam uma função de recompensa para o agente, que é +1 para vitória, -1 para derrota e 0 para demais estados.
+  - Os pesos são atualizados pelo método de "stochastic gradient ascent".
+
+- O último estágio é o treinamento da "value network", utilizando o método de aprendizado por reforço. Ela apresenta uma arquitetura similar à "policy network", mas com uma camada de saída diferente, que retorna um valor escalar entre -1 e +1.
+  - Os pesos são atualizados pelo método de "stochastic gradient descent", utilizando o erro quadrático médio entre a previsão da rede e o resultado efetivo da partida previamente simulada por self-play (vitória, derrota ou empate).
+
+- A avaliação da técnica revolucionária foi realizada por uma competição entre ela e outros programas de computador jogadores de Go que utilizam a técnica de MCTS, e técnicas no estado da arte anteriores.
+  - Em partidas comuns, o AlphaGo venceu quaisquer outros programas de computador jogadores de Go testados, com uma taxa de vitória de 99,8%.
+  - Mesmo criando estados iniciais com uma vantagem para o adversário, o AlphaGo venceu 77% das partidas contra o programa Crazy Stone (o mais forte).
+
+- Mesmo quando o ciclo de busca proposto não fazia nenhuma simulação de jogadas (rollout), o AlphaGo supero o desempenho de outros programas. Isso indica que a maior contribuição do trabalho é a "value network", que é capaz de avaliar um estado do jogo com alta precisão, sem a necessidade de simulações de jogadas.
 
 ## Faça um resumo do conteúdo epistemológico do Artigo Revolucionário
