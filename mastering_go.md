@@ -78,3 +78,31 @@
 - Mesmo quando o ciclo de busca proposto não fazia nenhuma simulação de jogadas (rollout), o AlphaGo supero o desempenho de outros programas. Isso indica que a maior contribuição do trabalho é a "value network", que é capaz de avaliar um estado do jogo com alta precisão, sem a necessidade de simulações de jogadas.
 
 ## Faça um resumo do conteúdo epistemológico do Artigo Revolucionário
+
+- O artigo se encaixa no domínio da Ciência da Computação, mais especificamente na subárea de Inteligência Artificial.
+
+- Ele trata acerca de jogos de tabuleiro de uma perspectiva de complexidade computacional, e não a partir de preocupações sobre jogabilidade ou design de jogos. Isso ressalta o aspecto soberano do domínio da Ciência da Computação.
+
+- Além disso, a seleção desse único aspecto do domínio de jogos de tabuleiro caracteriza uma abstração realizada sobre o jogo Go.
+  - Os aspectos físicos do jogo, como o tabuleiro e as peças, são abstraídos para uma representação matricial de 19x19.
+  - O aspecto de interação entre os jogadores é abstraído para um modelo de turnos, em que cada jogador tem um turno para realizar uma jogada, e o jogo termina quando um estado é avaliado como final pelo sistema de regras do jogo.
+
+- Em específico, destaca-se a necessidade de representar um jogo como um sistema de elementos e regras.
+  - Ele é composto pelos jogadores, por um conjunto de movimentos válidos, por uma representação do estado da partida, e por um conjunto de funções que levam de um estado a outros segundo as regras.
+
+- Os autores tomam a premissa de que todo estado de um jogo de turnos e de informação completa pode ser avaliado por uma função de valor, e que é possível obter a função de valor ótima para jogos nessas condições.
+
+- Essa premissa domina o paradigma até então vigente, em que o método de MCTS era o mais utilizado para lidar com o grande espaço de busca de jogos de tabuleiro.
+
+- O artigo propõe uma quebra de paradigma, ao apresentar uma técnica de avaliação de estados de jogos por meio de redes neurais, diminuindo a necessidade de simulações de jogadas em tempo de execução.
+
+- Em específico, a hipótese tomada pelos autores é que a "value network" é um método capaz de chegar mais próximo da função de valor ótima do que a técnica de MCTS, e que a "policy network" é um método capaz de selecionar movimentos mais promissores do que a técnica de UCT comum.
+
+- Para comprovar essa hipótese, os autores realizaram experimentos comparando a técnica revolucionária com a técnica de MCTS, e outras técnicas no estado da arte anteriores.
+
+- A reprodutibilidade do artigo é garantida pela descrição: do dataset de treinamento utilizado; das equações matemáticas utilizadas para avaliar os estados; da arquitetura das redes neurais montadas; do método de treinamento utilizado; dos componentes algorítmicos utilizados.
+
+- O treinamento foi realizado com objetividade, tendo sido descrito os componentes de hardware, como a quantidade de CPUs e GPUs, e threads utilizados.
+
+- Por fim, os resultados do experimento foram apresentados com métricas tomadas acerca da acurácia, da taxa de vitórias e do tempo gasto.
+  - Como formas de identificar cada técnica, os autores listaram todos os parâmetros relevantes para montar os agentes de AlphaGo, além da versão específica dos softwares adversários.
