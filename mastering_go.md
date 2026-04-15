@@ -4,11 +4,21 @@
 
 ## Porque este artigo foi escolhido? Qual a relação com o seu tema de pesquisa?
 
-Este artigo revolucionário iniciou uma pesquisa do laboratório Google Deepmind, que propôs uma nova técnica para se construir agentes inteligentes capazes de jogar jogos de tabuleiro.
+- Este artigo revolucionário iniciou uma pesquisa do laboratório Google Deepmind, que propôs uma nova técnica para se construir agentes inteligentes capazes de jogar jogos de tabuleiro.
 
-Este primeiro se restringiu a
+- Este primeiro se restringiu ao jogo Go, e utilizou treinamento supervisionado em parte do ajuste de pesos, mas a técnica foi posteriormente adaptada para outros jogos. Além disso, o treinamento supervisionado foi abandonado, sendo utilizado apenas o aprendizado por reforço.
 
- <!--TODO-->
+- O programa AlphaGo, desenvolvido a partir da técnica proposta, teve um desempenho de vitória de 99,8% contra outros programas de computador jogadores de Go testados.
+
+- Além disso, ele indicou a viabilidade do uso de redes neurais para avaliar estados de jogos, diminuindo a necessidade de simulações de jogadas em tempo de execução.
+
+- O trabalho levou a uma quebra de paradigma.
+  - Até então, o método de MCTS era o mais utilizado para lidar com o grande espaço de busca de jogos de tabuleiro.
+  - Os resultados do AlphaGo levaram outros pesquisadores a se debruçarem sobre técnicas de avaliação de estados de jogos por meio de redes neurais.
+
+- O artigo se relaciona diretamente com meu tema de pesquisa, que se trata do desenvolvimento de agentes inteligentes para jogos de turnos abstratos.
+  - O projeto desenvolvido em etapas posteriores desse mesmo grupo, o AlphaZero, foi capaz de vencer os melhores programas de computador jogadores de Go, Xadrez e Shogi, utilizando a mesma técnica, mas sem treinamento supervisionado.
+  - Acredito que possa ser possível adaptar a técnica proposta para o desenvolvimento de agentes inteligentes para jogos de turnos abstratos, o que é de interesse para a área de teste de jogabilidade de protótipos de jogos.
 
 ## Faça um resumo do conteúdo metodológico/tecnológico do Artigo Revolucionário
 
