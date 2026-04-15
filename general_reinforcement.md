@@ -4,7 +4,7 @@
 
 ## Porque este artigo foi escolhido? Qual a relação com o seu tema de pesquisa?
 
-## Faça um resumo do conteúdo metodológico/tecnológico do Artigo Revolucionário
+## Faça um resumo do conteúdo metodológico/tecnológico do Artigo Evolucionário
 
 - O artigo apresenta os jogos Xadrex e Shogi como desafios para a inteligência computacional, similarmente ao jogo de Go.
   - O grupo de pesquisa que lançou este trabalho havia previamente desenvolvido uma técnica de desenvolvimento de agentes inteligentes que jogavam Go a nível profissional.
@@ -48,4 +48,16 @@
 
 - Os autores concluem que o AlphaZero é um algoritmo de aprendizado por reforço geral, capaz de aprender a jogar diferentes jogos de tabuleiro a partir do conhecimento apenas das regras do jogo, e que supera os melhores programas específicos para cada jogo dada uma quantidade suficiente de tempo de treinamento.
 
-## Faça um resumo do conteúdo epistemológico do Artigo Revolucionário
+## Faça um resumo do conteúdo epistemológico do Artigo Evolucionário
+
+- O artigo se encontra no domínio da Ciência da Computação, com foco em Inteligência Artificial, como o anterior, de forma que se pode ressaltar também o aspecto soberano da área da ciência da computação ao analisar os jogos de tabuleiro como desafios para a inteligência computacional e para o aprendizado de máquina.
+
+- O artigo eleva o nível de abstração tomado no artigo revolucionário, ao lidar com conceitos mais gerais da representação de jogos de tabuleiro. A técnica deve ser capaz de representar qualquer jogo dada a situação de contorno de ser de informação completa e de turnos.
+
+- Os autores desenvolvem o trabalho a partir do paradigma estabelecido previamente pelo artigo revolucionário, que toma como premissa que o aprendizado por reforço é viável para treinar uma rede de reconhecimento de qualidade a partir de um estado do jogo.
+
+- A hipótese agora tomada é que é possível generalizar essa proposta para qualquer jogo dadas as restrições elencadas, o que se relaciona com o conceito de causa e consequência, na medida em que o desenvolvimento de uma técnica generalista é a consequência da adoção de um paradigma mais geral, e da formulação de uma hipótese mais geral.
+
+- O artigo comprova sua hipótese a partir de um experimento, que se faz reprodutível a partir da divulgação de parâmetros e do pseudo-código do algoritmo.
+
+- Similarmente, foi resguardada a objetividade ao demonstrar descrições dos estados dos jogos tratados, e o conjunto de recursos de hardware e software usados.
