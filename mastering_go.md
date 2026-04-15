@@ -35,4 +35,16 @@ Este primeiro se restringiu a
   - Eles assumem aproximadamente uma largura de 250 movimentos válidos e uma profundidade de 150 jogadas para o jogo de Go.
   - Também assumem aproximadamente uma largura de 35 movimentos válidos e uma profundidade de 80 jogadas para o jogo de Xadrez.
 
+- Uma técnica comum para lidar com esse espaço de busca é a MCTS. Ela atribui a cada nó da árvore uma estimativa do valor do ramo de busca a partir daquele nó.
+  - Conforme passos da busca são realizados, as estimativas de valor dos nós são atualizadas com base nos resultados das simulações de jogadas realizadas a partir daquele nó.
+  - Assintoticamente, a MCTS converge para a função de valor ótima.
+
+- O novo ciclo de busca desenvolvido pelos autores é uma adaptação da MCTS.
+  - O método tradicional de atribuição de valor a um nó é realizar simulações do seu estado até o fim da partida e avaliar seu resultado (se vitória, derrota ou empate)
+  - A técnica revolucionária, em vez de simular a partida, solicita a avaliação do estado do nó para a "value network", uma rede neural profunda de classificação de imagens.
+    - Ela recebe como entrada o tabuleiro do jogo no estado atual representado no tamanho de 19x19 (para o jogo de Go) e retorna uma estimativa do valor do estado, em relação à probabilidade esperada de vitória (ou derrota) para o jogador atual.
+  - Além disso, a cada passo de busca, será selecionado um nó para se expandir em uma nova jogada.
+    - O método tradicional seleciona a jogada que melhor balanceia a exploração (exploration) da árvore de busca com o aproveitamento (exploitation) dos nós mais promissores, de acordo com a fórmula de Upper Confidence Bounds for Trees (UCT).
+    - A técnica revolucionária, em vez disso, fornece o estado do tabuleiro para a "policy network", que retorna uma distribuição de probabilidades sobre os movimentos válidos a partir daquele estado. Então seleciona algum segundo o método da roleta.
+
 ## Faça um resumo do conteúdo epistemológico do Artigo Revolucionário
